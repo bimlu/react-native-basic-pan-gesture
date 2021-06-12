@@ -1,21 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { Image, StyleSheet, View } from "react-native";
+import MovableCircle from "./MovableCircle";
 
-export default function App() {
+const App = () => {
   return (
     <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Image source={require("./assets/agrass.png")} style={styles.bg} />
+      <View style={styles.circleContainer}>
+        <MovableCircle />
+      </View>
     </View>
   );
-}
+};
+
+export default App;
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    height: "100%",
+    width: "100%",
+  },
+  bg: {
+    width: "100%",
+    resizeMode: "stretch",
+    position: "absolute",
+  },
+  circleContainer: {
+    height: "100%",
+    width: "100%",
   },
 });
