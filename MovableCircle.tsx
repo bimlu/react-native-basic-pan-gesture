@@ -1,6 +1,14 @@
 import React, { Component } from "react";
 import { Dimensions, PanResponder, StyleSheet, View } from "react-native";
 import Icon from "react-native-vector-icons/Ionicons";
+
+// const getRandomRgb = () => Math.floor(Math.random() * 256);
+
+const getRandomRgba = () => {
+  const randomInt0To255 = () => Math.floor(Math.random() * 256);
+  return `rgba(${randomInt0To255()},${randomInt0To255()},${randomInt0To255()},${Math.random()})`;
+};
+
 class MovableCircle extends Component {
   constructor(props: any) {
     super(props);
@@ -25,7 +33,7 @@ class MovableCircle extends Component {
     this._previousLeft += gestureState.dx;
     this._previousTop += gestureState.dy;
     this.setState({
-      color: "rgba(255,255,255,0.7)",
+      color: getRandomRgba(),
     });
   }
 
