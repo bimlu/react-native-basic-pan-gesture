@@ -1,6 +1,6 @@
 import React from "react";
 import { Image, StyleSheet, View } from "react-native";
-import MovableCircle from "./MovableCircle";
+import MovableCircle from "./MovableBox";
 
 const App = () => {
   return (
